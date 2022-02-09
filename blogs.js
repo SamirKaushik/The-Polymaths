@@ -11,9 +11,9 @@ for (var i = 0; i < data.length; i++) {
   container.innerHTML += `<div class="card m-4" style="width: 18rem;">
     <img src="${data[i].image}" class="card-img-top" alt="${data[i].title}">
     <div class="card-body">
-      <h5 class="card-title">${data[i].title}</h5>
-      <p class="card-text">${data[i].sample}</p>
-      <a href="${data[i].link}" class="btn btn-primary">Read</a>
+      <h5 class="card-title text-center">${data[i].title}</h5>
+      <p class="card-text" style="text-align:justify">${data[i].sample}</p>
+      <a href="${data[i].link}" class="btn btn-primary" style="width:100%">Read</a>
     </div>
 </div>`;
 }
@@ -30,9 +30,9 @@ const handleSearch = () => {
               `<div class="card m-4" style="width: 18rem;">
                   <img src="${data[i].image}" class="card-img-top" alt="${data[i].title}">
                   <div class="card-body">
-                      <h5 class="card-title">${data[i].title}</h5>
-                      <p class="card-text">${data[i].sample}</p>
-                      <a href="${data[i].link}" class="btn btn-primary">Read</a>
+                      <h5 class="card-title text-center">${data[i].title}</h5>
+                      <p class="card-text" style="text-align:justify">${data[i].sample}</p>
+                      <a href="${data[i].link}" class="btn btn-primary" style="width:100%">Read</a>
                   </div>
               </div>`;
       }
