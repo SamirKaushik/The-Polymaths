@@ -13,7 +13,7 @@ for (var i = 0; i < data.length; i++) {
     <div class="card-body">
       <h5 class="card-title">${data[i].title}</h5>
       <p class="card-text">${data[i].sample}</p>
-      <a href="#" class="btn btn-primary">Read</a>
+      <a href="${data[i].link}" class="btn btn-primary">Read</a>
     </div>
 </div>`;
 }
