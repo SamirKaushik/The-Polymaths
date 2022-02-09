@@ -1,7 +1,7 @@
 import { data } from "./data.js"
 
 //variables
-var container=document.getElementById("container");
+var container = document.getElementById("container");
 var searchText = document.getElementById("searchInput");
 var search = document.getElementById("searchButton");
 var text = "";
@@ -13,26 +13,26 @@ for (var i = 0; i < data.length; i++) {
     <div class="card-body">
       <h5 class="card-title text-center">${data[i].title}</h5>
       <p class="card-text" style="text-align:justify">${data[i].sample}</p>
-      <a href="${data[i].link}" class="btn btn-primary" style="width:100%">Read</a>
-    </div>
+      <div class="btn btn-primary" style="width:100%" id="${i}">Read</div>
+      </div>
 </div>`;
 }
 
 //searching and updating DOM
 const handleSearch = () => {
-  text=text.trim();
-  if(text==null){return}
-  else{
+  text = text.trim();
+  if (text == null) { return }
+  else {
     container.innerHTML = "";
     for (var i = 0; i < data.length; i++) {
       if (data[i].title.toLowerCase().includes(text.toLowerCase()) || data[i].sample.toLowerCase().includes(text.toLowerCase())) {
-              container.innerHTML += 
-              `<div class="card m-4" style="width: 18rem;">
+        container.innerHTML +=
+          `<div class="card m-4" style="width: 18rem;">
                   <img src="${data[i].image}" class="card-img-top" alt="${data[i].title}">
                   <div class="card-body">
                       <h5 class="card-title text-center">${data[i].title}</h5>
                       <p class="card-text" style="text-align:justify">${data[i].sample}</p>
-                      <a href="${data[i].link}" class="btn btn-primary" style="width:100%">Read</a>
+                      <div class="btn btn-primary" style="width:100%" id="${i}">Read</div>
                   </div>
               </div>`;
       }
@@ -45,5 +45,9 @@ searchText.addEventListener('input', () => {
   text = searchText.value;
 })
 search.addEventListener('click', handleSearch)
-
-
+searchText.addEventListener('keypress', (e) => {
+  if (e.key == "Enter") {
+    e.preventDefault();
+    handleSearch();
+  }
+})

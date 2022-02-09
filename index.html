@@ -22,8 +22,19 @@
     }
 
     body {
-      background:linear-gradient(to bottom left,rgba(255, 0, 242, 0.80) 28%, transparent 30%), linear-gradient(to bottom right,rgba(255, 255, 0, 0.80) 30%, transparent 32%), linear-gradient(to bottom right, transparent 78%, rgba(0, 255, 128, 0.788) 80%),
-      linear-gradient(to bottom left,rgba(255, 192, 203, 0.808) 67%,rgba(0, 255, 255, 0.808) 70%);}
+      background: linear-gradient(to bottom left, rgba(255, 0, 242, 0.80) 28%, transparent 30%),
+        linear-gradient(to bottom right, rgba(255, 255, 0, 0.80) 30%, transparent 32%),
+        linear-gradient(to bottom right, transparent 78%, rgba(0, 255, 128, 0.788) 80%),
+        linear-gradient(to bottom left, rgba(255, 192, 203, 0.808) 67%, rgba(0, 255, 255, 0.808) 70%);
+    }
+    #container .card{
+      transition: transform 0.5s,box-shadow 0.5s;
+    }
+    #container .card:hover{
+      transform: translateX(20px);
+      transform-style: preserve-3d;
+      box-shadow: -10px 0px 10px rgba(0, 0, 0, 0.4);
+    }
   </style>
 </head>
 
