@@ -12,9 +12,9 @@ for (var i = 0; i < data.length; i++) {
     <img src="${data[i].image}" class="card-img-top" alt="${data[i].title}">
     <div class="card-body">
       <h5 class="card-title text-center">${data[i].title}</h5>
-      <p class="card-text" style="text-align:justify">${data[i].sample}</p>
+      <p class="card-text" style="text-align:justify">${data[i].sample}...</p>
       <div class="btn btn-primary" style="width:100%" id="${i}">Read</div>
-      </div>
+    </div>
 </div>`;
 }
 
@@ -31,7 +31,7 @@ const handleSearch = () => {
                   <img src="${data[i].image}" class="card-img-top" alt="${data[i].title}">
                   <div class="card-body">
                       <h5 class="card-title text-center">${data[i].title}</h5>
-                      <p class="card-text" style="text-align:justify">${data[i].sample}</p>
+                      <p class="card-text" style="text-align:justify">${data[i].sample}...</p>
                       <div class="btn btn-primary" style="width:100%" id="${i}">Read</div>
                   </div>
               </div>`;
