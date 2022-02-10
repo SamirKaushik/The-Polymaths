@@ -13,7 +13,7 @@ for (var i = 0; i < data.length; i++) {
     <div class="card-body">
       <h5 class="card-title text-center">${data[i].title}</h5>
       <p class="card-text" style="text-align:justify">${data[i].sample}...</p>
-      <div class="btn btn-primary" style="width:100%" id="${i}">Read</div>
+      <a href="blog.html" class="btn btn-primary" style="width:100%">Read</a>
     </div>
 </div>`;
 }
@@ -26,18 +26,23 @@ const handleSearch = () => {
     container.innerHTML = "";
     for (var i = 0; i < data.length; i++) {
       if (data[i].title.toLowerCase().includes(text.toLowerCase()) || data[i].sample.toLowerCase().includes(text.toLowerCase())) {
-        container.innerHTML +=
-          `<div class="card m-4" style="width: 18rem;">
-                  <img src="${data[i].image}" class="card-img-top" alt="${data[i].title}">
-                  <div class="card-body">
-                      <h5 class="card-title text-center">${data[i].title}</h5>
-                      <p class="card-text" style="text-align:justify">${data[i].sample}...</p>
-                      <div class="btn btn-primary" style="width:100%" id="${i}">Read</div>
-                  </div>
-              </div>`;
+        container.innerHTML += `<div class="card m-4" style="width: 18rem;">
+        <img src="${data[i].image}" class="card-img-top" alt="${data[i].title}">
+        <div class="card-body">
+          <h5 class="card-title text-center">${data[i].title}</h5>
+          <p class="card-text" style="text-align:justify">${data[i].sample}...</p>
+          <a href="blog.html" class="btn btn-primary" style="width:100%">Read</a>
+        </div>
+    </div>`;
       }
     }
   }
+  var readBlog=document.querySelectorAll(".card-body .btn");
+readBlog.forEach((button)=>{
+  button.onclick=()=>{
+    localStorage.setItem("blog title",button.parentElement.firstElementChild.innerHTML);
+  }
+})
 }
 
 //search related events
@@ -49,5 +54,11 @@ searchText.addEventListener('keypress', (e) => {
   if (e.key == "Enter") {
     e.preventDefault();
     handleSearch();
+  }
+})
+var readBlog=document.querySelectorAll(".card-body .btn");
+readBlog.forEach((button)=>{
+  button.onclick=()=>{
+    localStorage.setItem("blog title",button.parentElement.firstElementChild.innerHTML);
   }
 })
