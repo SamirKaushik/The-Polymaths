@@ -1,3 +1,12 @@
+// Blog data object
+// {
+// image: "",
+// date: "",
+// title: "",
+// author: "",
+// sample: ``,
+// article: ``
+// },
 export const data = [
 {
 image:"https://source.unsplash.com/random/?computers",
@@ -33,11 +42,3 @@ So, there is no point for a computer to kill a human (unless another human will 
 
 ]
 
-// {
-// image: "",
-// date: "",
-// title: "",
-// author: "",
-// sample: ``,
-// article: ``
-// },
