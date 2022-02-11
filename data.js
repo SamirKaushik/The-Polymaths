@@ -2,7 +2,7 @@ export const data = [
     {
 image:"https://source.unsplash.com/random/?computers",
 date: "Feb 10, 2021",
-title: "Humans And Computers",
+title: "Humans and Computers",
 author:"Vansh",
 sample: `
 What is a computer?
