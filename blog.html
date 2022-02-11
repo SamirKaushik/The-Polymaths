@@ -86,9 +86,6 @@
             justify-content: space-between;
             align-items: center;
         }
-        h2{
-            font-size: 25px;
-        }
         pre {
             overflow-x: auto;
             white-space: pre-wrap;
@@ -137,11 +134,12 @@
     var blog_title = localStorage.getItem("blog title");
     for (var i = 0; i < data.length; i++) {
         if (data[i].title == blog_title) {
-            document.body.innerHTML += `<div id="date"><div>Published : ${data[i].date}</div><div id="author"><a href="writers.html">-${data[i].author}</a></div></div>
-    <div id="content">
-        <h2 style="text-align: center;">${data[i].title}</h2>
-        <hr>
-        <p><pre>${data[i].article}</pre></p>
+            document.body.innerHTML += `
+            <div id="date"><div>Published : ${data[i].date}</div><div id="author"><a href="writers.html">-${data[i].author}</a></div></div>
+            <div id="content">
+            <h2 style="text-align: center;">${data[i].title}</h2>
+            <hr>
+            <p><pre>${data[i].article}</pre></p>
     </div>`;
         }
     }
