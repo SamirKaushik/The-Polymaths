@@ -8,6 +8,8 @@
         integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <title>The Polymaths</title>
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@300&display=swap');
+
         @media only screen and (max-width:991.5px) {
             a.navbar-brand {
                 position: absolute;
@@ -15,13 +17,33 @@
                 transform: translateX(-50%);
                 top: 8px;
             }
-            div#content,div#date{
-                width:85%;
+
+            div#date {
+                width: 85%;
+            }
+            pre{
+                font-size: 14px!important;
+            }
+            #date{
+                font-size: 15px!important;
             }
         }
+
         @media only screen and (max-width:600px) {
-            div#content,div#date{
-                width:90%;
+
+            div#date {
+                width: 90%;
+            }
+            pre{
+                font-size: 12px!important;
+            }
+            #date{
+                font-size: 14px!important;
+            }
+        }
+        @media only screen and (max-width:400px){
+            pre{
+                font-size: 10px!important;
             }
         }
 
@@ -31,10 +53,10 @@
 
         body {
             background: linear-gradient(to bottom left, rgba(102, 101, 102, 0.8) 28%, transparent 30%),
-        linear-gradient(to bottom right, rgba(63, 63, 56, 0.8) 30%, transparent 32%),
-        linear-gradient(to bottom right, transparent 78%, rgba(61, 58, 58, 0.788) 80%),
-        linear-gradient(to bottom left, rgba(53, 52, 52, 0.808) 67%, rgba(73, 77, 77, 0.808) 70%);
-        user-select: none;
+                linear-gradient(to bottom right, rgba(63, 63, 56, 0.8) 30%, transparent 32%),
+                linear-gradient(to bottom right, transparent 78%, rgba(61, 58, 58, 0.788) 80%),
+                linear-gradient(to bottom left, rgba(53, 52, 52, 0.808) 67%, rgba(73, 77, 77, 0.808) 70%);
+            user-select: none;
         }
 
         #container .card {
@@ -48,17 +70,17 @@
         }
 
         #content {
-            width: 70%;
             background-color: floralwhite;
             text-align: justify;
-            border-radius:0 0 5px 5px;
-            margin:0 auto 35px auto;
+            border-radius: 0 0 5px 5px;
+            margin: 0 auto 35px auto;
             box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.6);
             padding: 20px;
         }
-        #date{
+
+        #date {
             box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.6);
-            padding:10px;
+            padding: 10px;
             background-color: black;
             width: 70%;
             margin: 35px auto 0px auto;
@@ -69,8 +91,22 @@
             justify-content: space-between;
             align-items: center;
         }
-        #like{
-            cursor: pointer;
+        h2{
+            font-size: 25px;
+        }
+        pre {
+            overflow-x: auto;
+            white-space: pre-wrap;
+            white-space: -moz-pre-wrap;
+            white-space: -pre-wrap;
+            white-space: -o-pre-wrap;
+            word-wrap: break-word;
+            font-size: 16px;
+            font-family: Merriweather;
+        }
+        a{
+            text-decoration: none;
+            color: white;
         }
     </style>
 </head>
@@ -102,26 +138,19 @@
         crossorigin="anonymous"></script>
 </body>
 <script type="module">
-    import {data} from "./data.js"
-    var blog_title=localStorage.getItem("blog title");
-    for(var i=0;i<data.length;i++){
-        if(data[i].title==blog_title){
-            document.body.innerHTML+=`<div id="date"><div>Published : ${data[i].date}</div><svg id="like" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="white" class="bi bi-heart-fill" viewBox="0 0 16 16">
-        <path fill-rule="evenodd" d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z"/>
-      </svg></div>
+    import { data } from "./data.js"
+    var blog_title = localStorage.getItem("blog title");
+    for (var i = 0; i < data.length; i++) {
+        if (data[i].title == blog_title) {
+            document.body.innerHTML += `<div id="date"><div>Published : ${data[i].date}</div><div id="author"><a href="writers.html">-${data[i].author}</a></div></div>
     <div id="content">
         <h2 style="text-align: center;">${data[i].title}</h2>
         <hr>
-        <p style="text-align: justify;">${data[i].sample}</p>
+        <p><pre>${data[i].article}</pre></p>
     </div>`;
         }
     }
-    var like=document.getElementById("like");
-    like.onclick=()=>{
-        if(like.style.fill=="red")
-            like.style.fill="white";
-        else like.style.fill="red";
-    }
 </script>
 <script src="data.js" type="module"></script>
+
 </html>
