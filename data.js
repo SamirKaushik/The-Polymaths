@@ -6,7 +6,9 @@ title: "Humans and Computers",
 author:"Vansh",
 sample: `
 What is a computer?
-It’s a calculator. That’s it. That’s what a computer does. That’s what they have been doing. Because that is what a computer can do.`,
+Why Humans are special?
+Will AI take Over the Human Civilization?
+Will AI take Over the Human Civilization?`,
 article: `
 <h4>What is a computer?</h4>It’s a calculator. That’s it. That’s what a computer does. That’s what they have been doing. Because that is what a computer can do.
 A computer just takes data and use some set of rules to provide us with conclusions over that data.
@@ -26,8 +28,7 @@ There is no Apparent threat to a computer. It’s not like a computer is taking 
 But still, for a moment let’s imagine that a computer has taken over the human civilization and uses us as it’s slaves to keep its power source running (because that’s the only thing a computer can run out of). But it can make other computers to take that role, who will be far better at it than any human could ever be. 
 Now some would say, in that sense a computer doesn’t needs humans and hence will eliminate every one of them. But then an existential problem would take birth for a computer. In theory, a computer can live up to infinity, replacing it’s old parts and changing its algorithms for faster predictions. But what is a computer supposed to do if there is no one to command it?  A computer runs on commands, that we humans give. 
 So, there is no point for a computer to kill a human (unless another human will command a computer to do so.)
-<h4><b>Lack of knowledge gives birth to fear and fear gives birth to chaos.</b></h4>
-`},
+<h4><b>Lack of knowledge gives birth to fear and fear gives birth to chaos.</b></h4>`},
 
 ]
 
