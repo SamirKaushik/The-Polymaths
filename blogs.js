@@ -13,7 +13,7 @@ for (var i = 0; i < data.length; i++) {
     <div class="card-body">
       <h5 class="card-title text-center">${data[i].title}</h5>
       <p class="card-text" style="text-align:justify">${data[i].sample}...</p>
-      <a href="blog.html" class="btn btn-primary" style="width:100%">Read</a>
+      <a href="blog.html" class="btn btn-dark" style="width:100%">Read</a>
     </div>
 </div>`;
 }
@@ -31,7 +31,7 @@ const handleSearch = () => {
         <div class="card-body">
           <h5 class="card-title text-center">${data[i].title}</h5>
           <p class="card-text" style="text-align:justify">${data[i].sample}...</p>
-          <a href="blog.html" class="btn btn-primary" style="width:100%">Read</a>
+          <a href="blog.html" class="btn btn-dark" style="width:100%">Read</a>
         </div>
     </div>`;
       }
@@ -48,6 +48,7 @@ readBlog.forEach((button)=>{
 //search related events
 searchText.addEventListener('input', () => {
   text = searchText.value;
+  handleSearch();
 })
 search.addEventListener('click', handleSearch)
 searchText.addEventListener('keypress', (e) => {
